@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EscalationRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <escalationRule>
+        <fullName>High Priority Cases</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <businessHours>Default</businessHours>
+            <businessHoursSource>Static</businessHoursSource>
+            <criteriaItems>
+                <field>Case.Priority</field>
+                <operation>equals</operation>
+                <value>High</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.IsClosed</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <escalationAction>
+                <assignedTo>test-wl1ohsbkmlws@example.com</assignedTo>
+                <assignedToTemplate>unfiled$public/for_Email_web_to_case</assignedToTemplate>
+                <assignedToType>User</assignedToType>
+                <minutesToEscalation>240</minutesToEscalation>
+                <notifyCaseOwner>false</notifyCaseOwner>
+                <notifyEmail>lakshya.soni@thinkvibes.com</notifyEmail>
+                <notifyToTemplate>unfiled$public/for_Email_web_to_case</notifyToTemplate>
+            </escalationAction>
+            <escalationStartTime>CaseCreation</escalationStartTime>
+        </ruleEntry>
+    </escalationRule>
+</EscalationRules>
