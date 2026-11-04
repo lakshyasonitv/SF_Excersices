@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_containing_a</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(ISBLANK(Email)),
+CONTAINS(MID(Email, 5, 8), &apos;a&apos;)
+)</errorConditionFormula>
+    <errorDisplayField>Email</errorDisplayField>
+    <errorMessage>The Email should not contain &apos;a&apos; between character 5 and 12.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>close_date_this_month_end_only</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+    YEAR(CloseDate) &gt; YEAR(TODAY()),
+    AND(
+        YEAR(CloseDate) == YEAR(TODAY()),
+        MONTH(CloseDate) &gt; MONTH(TODAY())
+    )
+)</errorConditionFormula>
+    <errorMessage>Close Date should fall under the current month.</errorMessage>
+</ValidationRule>
