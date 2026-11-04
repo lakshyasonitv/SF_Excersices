@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>beginning_validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(BEGINS(LOWER(Email), &quot;info@&quot;),BEGINS(LOWER(Email), &quot;contact@&quot;), BEGINS(LOWER(Email), &quot;career@&quot;))</errorConditionFormula>
+    <errorDisplayField>Email</errorDisplayField>
+    <errorMessage>You can not start email with info@, contact@, Career@.</errorMessage>
+</ValidationRule>
