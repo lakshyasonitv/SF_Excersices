@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>US_Phone_10</fullName>
+    <active>true</active>
+    <errorConditionFormula>Country = &quot;United States&quot;  &amp;&amp;  LEN(Phone)  &lt;&gt;  10</errorConditionFormula>
+    <errorDisplayField>Phone</errorDisplayField>
+    <errorMessage>In United States the mobile number should be 10 Digits.</errorMessage>
+</ValidationRule>

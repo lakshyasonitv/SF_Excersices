@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>opp_from_negotiation_to_closed_won</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+    ISCHANGED(StageName),
+    TEXT(PRIORVALUE(StageName)) = &quot;Negotiation&quot;,
+    TEXT(StageName) = &quot;Closed Won&quot;,
+    ISBLANK(NextStep)
+)</errorConditionFormula>
+    <errorMessage>Error you can not change stage without filling Nextstage first</errorMessage>
+</ValidationRule>
