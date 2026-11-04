@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Reason_If_Unqualified</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(ISNEW()),
+NOT(ISCLONE()),
+ TEXT(Status) = &apos;Unqualified&apos;,
+ISBLANK(Reason__c)
+)</errorConditionFormula>
+    <errorDisplayField>Reason__c</errorDisplayField>
+    <errorMessage>Unqualified Lead Should have a Reason.</errorMessage>
+</ValidationRule>
