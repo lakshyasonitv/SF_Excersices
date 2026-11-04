@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Block_Spam_Honeypot</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(ISBLANK( Honeypot__c ))</errorConditionFormula>
+    <errorMessage>Submission rejected: automated spam detected.</errorMessage>
+</ValidationRule>
